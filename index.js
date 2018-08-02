@@ -1,7 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 client.commands = new Discord.Collection()
-var config = require("./config.json")
 var prefix = config.prefix
 var fs = require('fs')
 fs.readdir(`./commands/`,(err, files)=>{
