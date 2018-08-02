@@ -1,22 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 client.commands = new Discord.Collection()
-var prefix = config.prefix
-var fs = require('fs')
-fs.readdir(`./commands/`,(err, files)=>{
-  if(err) console.log(err)
-  let jsfile = files.filter(f => f.split(".").pop() == "js")
-  if(jsfile.length <= 0){
-    console.log("Nie znaleziono komend!")
-  }
-  jsfile.forEach((f,i)=> {
-    let props = require(`./commands/${f}`)
-    console.log(`[Załadowano] ${f}`)
-    client.commands.set(props.help.name, props)
-  })
-})
-
-
 client.on('ready', () => {
 	var moment = require('moment')
 	var hr = new Date().getHours() +2
